@@ -57,16 +57,16 @@ npm run dev
 
 ## 界面图
 ### 博客系统主界面
-<img src=https://github.com/long-light/blog_system/blob/master/imags/2022131548.png width=70%/>
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022131548.png width=90%/>
 
 ### 最热标签、最热文章、最新文章
-<img src=https://github.com/long-light/blog_system/blob/master/imags/2022141642.png width=70%/>
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022141642.png width=90%/>
 
 ### 文章归档界面
-<img src=https://github.com/long-light/blog_system/blob/master/imags/2022141833.png width=70%/>
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022141833.png width=90%/>
 
 ### 文章发布界面
-<img src=https://github.com/long-light/blog_system/blob/master/imags/2022141943_publish.png width=70%/>
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022141943_publish.png width=90%/>
 
 ### 文章详情界面
-<img src=https://github.com/long-light/blog_system/blob/master/imags/2022142037_ArticleDetial.png width=70%/>
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022142037_ArticleDetial.png width=90%/>
