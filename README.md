@@ -1,5 +1,5 @@
 <p align=center>
-    <img src="https://static.talkxj.com/articles/4a8ca439f6a4cce8316f9a885c632cee.jpg" alt="LongzxCoding" style="border-radius: 50%">
+    <img src="https://github.com/long-light/blog_system/blob/master/imags/logoV2.png" alt="LongzxCoding" style="border-radius: 50%">
 </p>
 
 <p align=center>
@@ -8,7 +8,7 @@
 
 
 **此项目基于SpringBoot框架开发，实现多用户在线发帖、删帖、评论、回复等功能；搭建后台管理系统，实现对网
-站数据的统一管理、用户权限管理。**
+站数据的统一管理、用户权限管理**
 ## 目录结构
 前端项目位于blog-app下
 
@@ -39,7 +39,7 @@ blog-parent
 |开发工具|说明|
 |-|-|
 |IDEA|Java开发工具IDE|
-|VSCode|Vue开发工具IDE|
+|Hbuilder X|Vue开发工具IDE|
 |SQLyog|MySQL远程连接工具|
 |Another Redis Desktop Manager|Redis远程连接工具|
 |X-shell|Linux远程连接工具|
