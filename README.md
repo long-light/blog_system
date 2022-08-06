@@ -1,4 +1,12 @@
-# blog_system
+<p align=center>
+    <img src="https://static.talkxj.com/articles/4a8ca439f6a4cce8316f9a885c632cee.jpg" alt="LongzxCoding" style="border-radius: 50%">
+</p>
+
+<p align=center>
+   基于Springboot + Vue 开发的前后端分离博客
+</p>
+
+
 **此项目基于SpringBoot框架开发，实现多用户在线发帖、删帖、评论、回复等功能；搭建后台管理系统，实现对网
 站数据的统一管理、用户权限管理。**
 ## 目录结构
@@ -20,5 +28,35 @@ blog-parent
     └── vo            --  vo模块
 ```
 
-![界面](https://github.com/long-light/blog_system/blob/master/imags/2022131548.png)
-![最热标签、最热文章、最新文章](https://github.com/long-light/blog_system/blob/master/imags/2022131729.png)
+## 技术介绍
+
+**前端：** vue + vuex + vue-router + axios + element
+
+**后端：** SpringBoot + SpringSecurity + MyBatisPlus + Mysql + Redis + RocketMQ
+
+## 开发环境
+
+|开发工具|说明|
+|-|-|
+|IDEA|Java开发工具IDE|
+|VSCode|Vue开发工具IDE|
+|SQLyog|MySQL远程连接工具|
+|Another Redis Desktop Manager|Redis远程连接工具|
+|X-shell|Linux远程连接工具|
+|Xftp|Linux文件上传工具|
+
+## 界面图
+### 博客系统主界面
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022131548.png width=70%/>
+
+### 最热标签、最热文章、最新文章
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022141642.png width=70%/>
+
+### 文章归档界面
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022141833.png width=70%/>
+
+### 文章发布界面
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022141943_publish.png width=70%/>
+
+### 文章详情界面
+<img src=https://github.com/long-light/blog_system/blob/master/imags/2022142037_ArticleDetial.png width=70%/>
