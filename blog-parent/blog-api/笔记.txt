@@ -1,0 +1,35 @@
+1. lombok https://zhuanlan.zhihu.com/p/272516657
+@Data 包含了 @ToString、@EqualsAndHashCode、@Getter / @Setter和@RequiredArgsConstructor的功能
+
+2. VO对象
+vo(View Object)显示层对象，后端传递给前端的数据，这里使用xxxVO对POJO对象进行二次封装
+可以有效将前后端进行分离，POJO对象是数据库到Java映射，如果前端需要的数据需要修改，直接修改POJO
+难免对数据库CRUD造成影响，所以使用xxxVO对POJO进行二次封装
+
+在VO类中，为防止前端精度损失，需要将long类型转换为String类型
+
+3.ThreadLocal:用于线程变量隔离
+每一个线程都具有一个ThreadLocal, ThreadLocal中存储的数据只能被其拥有的线程访问
+    ThreadLocal详解
+        https://blog.csdn.net/u010445301/article/details/111322569
+        https://www.zhihu.com/question/477411483
+        https://www.jianshu.com/p/377bb840802f
+
+4.mybatis-plus中的insert(xxx)会自动将自增主键的值更新到实体类对象xxx中
+官网解释："insart后主键会自动'set到实体的ID字段。所以你只需要getid()就可以获得数据库中的id值, 利用主键自增，mybatis-plus的insert操作后id值会回到参数对象中
+
+5.AOP：自定义注解作为切点表达式
+    日志记录:
+    统一缓存:将数据存入redis,加快下次访问速度
+
+6.待优化的地方：
+    1.文章可以放入es当中，便于后续中文分词搜索。springboot教程有和es的整合
+    2.评论数据，可以考虑放入mongodb当中 电商系统当中 评论数据放入mongo中
+    3.阅读数和评论数 ，考虑把阅读数和评论数 增加的时候 放入redis incr自增，使用定时任务 定时把数据固话到数据库当中
+    4.为了加快访问速度，部署的时候，可以把图片，js，css等放入七牛云存储中，加快网站访问速度
+
+7.在SpringBoot的项目中，集成Mybatis持久层框架后，对于Mybatis的接口类如:UserMapper,SysMenuMapper，这些接口类Mapper用于访问持久层，
+  在JPA中指的是DAO层。在Service层需要使用@Autowired或@Resource注解注入后调用Mapper里的方法时，需要将这些接口注入到Spring上下文中。
+  有两种方法可以完成注入：
+  1.在每个Mapper的接口上都加一个@Mapper/@Component注解。
+  2.在SpringBoot的启动类/Mybatis的配置类上加一个@MapperScan并指明包路径

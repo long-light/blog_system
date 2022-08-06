@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.longzx.blog.dao.mapper.ArticleMapper">
+
+    <!--List<Archives> listArchives();-->
+    <select id="listArchives" resultType="com.longzx.blog.dao.dos.Archives">
+        SELECT YEAR(FROM_UNIXTIME(create_date/1000)) as year,
+          MONTH(FROM_UNIXTIME(create_date/1000)) as month,
+          COUNT(*) count
+        FROM ms_article GROUP BY year, month;
+    </select>
+
+    <resultMap id="articleMap" type="com.longzx.blog.dao.pojo.Article">
+        <id column="id" property="id" />
+        <result column="author_id" property="authorId"/>
+        <result column="comment_counts" property="commentCounts"/>
+        <result column="create_date" property="createDate"/>
+        <result column="summary" property="summary"/>
+        <result column="title" property="title"/>
+        <result column="view_counts" property="viewCounts"/>
+        <result column="weight" property="weight"/>
+        <result column="body_id" property="bodyId"/>
+        <result column="category_id" property="categoryId"/>
+    </resultMap>
+
+    <select id="listArticle" resultMap="articleMap">
+        select * from ms_article
+        <where>
+            1 = 1
+            <if test="categoryId != null">
+                and category_id=#{categoryId}
+            </if>
+            <if test="tagId != null">
+                and id in (select article_id from ms_article_tag where tag_id=#{tagId})
+            </if>
+            <if test="year != null and year.length>0 and month != null and month.length>0">
+                and (FROM_UNIXTIME(create_date/1000,'%Y') =#{year} and FROM_UNIXTIME(create_date/1000,'%m')=#{month})
+            </if>
+        </where>
+        order by weight desc, create_date desc
+    </select>
+
+    <update id="bathUpdateArticleViewCount" parameterType="list">
+        update ms_article
+        set view_counts =
+        <foreach collection="list" item="item" separator="" open="CASE id" close="end">
+            when #{item.articleId} then #{item.Count}
+        </foreach>
+        where id in
+        <foreach collection="list" item="item" open="(" close=")" separator=",">
+            #{item.articleId, jdbcType=BIGINT}
+        </foreach>
+    </update>
+
+    <!--void bathUpdateArticleCommentCount(List<AutoTaskService.CountQuery> list);-->
+    <update id="bathUpdateArticleCommentCount" parameterType="list">
+        update ms_article
+        set comment_counts =
+        <foreach collection="list" item="item" separator="" open="CASE id" close="end">
+            when #{item.articleId} then #{item.Count}
+        </foreach>
+        where id in
+        <foreach collection="list" item="item" open="(" close=")" separator=",">
+            #{item.articleId, jdbcType=BIGINT}
+        </foreach>
+    </update>
+
+    <!--void bathUpdateArticleScore(List<AutoTaskService.CountQuery> list);-->
+    <update id="bathUpdateArticleScore" parameterType="list">
+        update ms_article
+        set weight =
+        <foreach collection="list" item="item" separator="" open="CASE id" close="end">
+            when #{item.articleId} then #{item.Count}
+        </foreach>
+        where id in
+        <foreach collection="list" item="item" open="(" close=")" separator=",">
+            #{item.articleId, jdbcType=BIGINT}
+        </foreach>
+    </update>
+
+</mapper>
