@@ -20,4 +20,5 @@ blog-parent
     └── vo            --  vo模块
 ```
 
-![界面](images/2022131548.png)
+![界面](https://github.com/long-light/blog_system/blob/master/imags/2022131548.png)
+![最热标签、最热文章、最新文章](https://github.com/long-light/blog_system/blob/master/imags/2022131729.png)
