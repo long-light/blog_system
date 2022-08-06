@@ -28,6 +28,16 @@ blog-parent
     └── vo            --  vo模块
 ```
 
+## 运行
+### 前端工程：需要安装Node.js
+```
+npm install
+npm run build
+npm run dev
+```
+### 后端工程
+修改blog-api下**resources/application**中相关配置信息
+
 ## 技术介绍
 
 **前端：** vue + vuex + vue-router + axios + element
